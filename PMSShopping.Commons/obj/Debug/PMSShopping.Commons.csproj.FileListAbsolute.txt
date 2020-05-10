@@ -1,0 +1,6 @@
+E:\WORK\MVC-Identity\PMSShopping.Commons\bin\Debug\PMSShopping.Commons.dll
+E:\WORK\MVC-Identity\PMSShopping.Commons\bin\Debug\PMSShopping.Commons.pdb
+E:\WORK\MVC-Identity\PMSShopping.Commons\obj\Debug\PMSShopping.Commons.csprojAssemblyReference.cache
+E:\WORK\MVC-Identity\PMSShopping.Commons\obj\Debug\PMSShopping.Commons.csproj.CoreCompileInputs.cache
+E:\WORK\MVC-Identity\PMSShopping.Commons\obj\Debug\PMSShopping.Commons.dll
+E:\WORK\MVC-Identity\PMSShopping.Commons\obj\Debug\PMSShopping.Commons.pdb

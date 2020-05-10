@@ -1,0 +1,10 @@
+﻿@model string
+@Styles.Render("~/bundles/errorFrendly")
+<section class="FlashMessage Open" id="BadMsg">
+    <div class="Modal">
+        <i class="fa fa-times-circle-o fa-5x" aria-hidden="true"></i>
+        <h1>@Model</h1>
+        <button class="CloseButton" id="BadBtn">Close</button>
+    </div>
+</section>
+@Scripts.Render("~/bundles/errorFrendlyjs")

@@ -1,0 +1,116 @@
+﻿@using PMSShoppingApp.Models
+@model LoginViewModel
+@{
+    Layout = null;
+    ViewBag.Title = "Log in";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" src="~/Assets/Login/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    @Styles.Render("~/bundles/bootstrapv4")
+    <!--===============================================================================================-->
+    @Styles.Render("~/bundles/fontawsv4")
+    <!--===============================================================================================-->
+    @Styles.Render("~/bundles/iconic")
+    <!--===============================================================================================-->
+    @Styles.Render("~/bundles/animate")
+    <!--===============================================================================================-->
+    @Styles.Render("~/bundles/hamburgers")
+    <!--===============================================================================================-->
+    @Styles.Render("~/bundles/animsition")
+    <!--===============================================================================================-->
+    @Styles.Render("~/bundles/select2")
+    <!--===============================================================================================-->
+    @Styles.Render("~/bundles/daterangepicker")
+    <!--===============================================================================================-->
+    @Styles.Render("~/bundles/loginstyle")
+    <!--===============================================================================================-->
+</head>
+<body>
+
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('/Assets/Login/images/bg-01.jpg');">
+            <div class="wrap-login100">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login100-form validate-form", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <span class="login100-form-logo">
+                        <i class="zmdi zmdi-landscape"></i>
+                    </span>
+
+                    <span class="login100-form-title p-b-34 p-t-27">
+                        Log in
+                    </span>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter username">
+                        @Html.TextBoxFor(m => m.Email, new { @type = "text", @class = "input100", @placeholder = "Email" })
+                        <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+                        @Html.TextBoxFor(m => m.Password, new { @type = "password", @class = "input100", @placeholder = "Password" })
+                        <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                    </div>
+
+                    <div class="contact100-form-checkbox">
+                        @Html.TextBoxFor(m => m.RememberMe, new { @type = "checkbox", @class = "input-checkbox100", @id = "ckb1" })
+                        <label class="label-checkbox100" for="ckb1">
+                            Remember me
+                        </label>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn" type="submit">
+                            Login
+                        </button>
+                    </div>
+
+                    <div class="text-center p-t-90">
+
+                        @Html.ActionLink("Forgot Password?", "ForgotPassword", null, null, new { @class = "txt1" })
+
+
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dropDownSelect1"></div>
+
+    <!--===============================================================================================-->
+    @Scripts.Render("~/bundles/jqueryv32")
+    <!--===============================================================================================-->
+    @Scripts.Render("~/bundles/animsitionjs")
+    <!--===============================================================================================-->
+    @Scripts.Render("~/bundles/popperjs")
+    @Scripts.Render("~/bundles/bootstrapjs")
+    <!--===============================================================================================-->
+    @Scripts.Render("~/bundles/select2js")
+    <!--===============================================================================================-->
+    @Scripts.Render("~/bundles/momentjs")
+    @Scripts.Render("~/bundles/daterangepickerjs")
+    <!--===============================================================================================-->
+    @Scripts.Render("~/bundles/countdowntimejs")
+    <!--===============================================================================================-->
+    @Scripts.Render("~/bundles/loginjs")
+
+    @if (ViewData.ModelState["CustomError"] != null&& ViewData.ModelState["CustomError"].Errors.Any())
+    {
+        @Html.Partial("~/Views/Shared/ErrorFrendly.cshtml", ViewData.ModelState["CustomError"].Errors.First().ErrorMessage.ToString())
+    }
+
+</body>
+</html>
+
+

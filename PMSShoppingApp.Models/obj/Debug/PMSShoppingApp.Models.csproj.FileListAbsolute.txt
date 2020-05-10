@@ -1,0 +1,6 @@
+E:\WORK\MVC-Identity\PMSShoppingApp.Models\bin\Debug\PMSShoppingApp.Models.dll
+E:\WORK\MVC-Identity\PMSShoppingApp.Models\bin\Debug\PMSShoppingApp.Models.pdb
+E:\WORK\MVC-Identity\PMSShoppingApp.Models\obj\Debug\PMSShoppingApp.Models.csprojAssemblyReference.cache
+E:\WORK\MVC-Identity\PMSShoppingApp.Models\obj\Debug\PMSShoppingApp.Models.csproj.CoreCompileInputs.cache
+E:\WORK\MVC-Identity\PMSShoppingApp.Models\obj\Debug\PMSShoppingApp.Models.dll
+E:\WORK\MVC-Identity\PMSShoppingApp.Models\obj\Debug\PMSShoppingApp.Models.pdb

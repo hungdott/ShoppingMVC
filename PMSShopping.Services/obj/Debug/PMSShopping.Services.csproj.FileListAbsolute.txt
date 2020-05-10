@@ -1,0 +1,7 @@
+E:\WORK\MVC-Identity\PMSShopping.Services\bin\Debug\PMSShopping.Services.exe.config
+E:\WORK\MVC-Identity\PMSShopping.Services\bin\Debug\PMSShopping.Services.exe
+E:\WORK\MVC-Identity\PMSShopping.Services\bin\Debug\PMSShopping.Services.pdb
+E:\WORK\MVC-Identity\PMSShopping.Services\obj\Debug\PMSShopping.Services.csprojAssemblyReference.cache
+E:\WORK\MVC-Identity\PMSShopping.Services\obj\Debug\PMSShopping.Services.csproj.CoreCompileInputs.cache
+E:\WORK\MVC-Identity\PMSShopping.Services\obj\Debug\PMSShopping.Services.exe
+E:\WORK\MVC-Identity\PMSShopping.Services\obj\Debug\PMSShopping.Services.pdb
