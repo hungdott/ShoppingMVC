@@ -220,7 +220,7 @@ namespace PMSShoppingApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await UserManager.FindByNameAsync(model.Email);
+                var user = await UserManager.FindByEmailAsync(model.Email);
                 if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
                 {
                     // Don't reveal that the user does not exist or is not confirmed
@@ -232,7 +232,8 @@ namespace PMSShoppingApp.Controllers
                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
                 var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                 await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                ModelState.AddModelError("CustomSuccess", "Chúng tôi đã gửi mail đến tài khoản của bạn, vui lòng làm theo hướng dẫn");
+                return View(model);
             }
 
             // If we got this far, something failed, redisplay form
@@ -266,19 +267,31 @@ namespace PMSShoppingApp.Controllers
             {
                 return View(model);
             }
-            var user = await UserManager.FindByNameAsync(model.Email);
+            var user = await UserManager.FindByEmailAsync(model.Email);
+            
             if (user == null)
             {
                 // Don't reveal that the user does not exist
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                ModelState.AddModelError("CustomError", "Email không tồn tại, mời nhập lại email");
+                return View(model);
             }
+            var checkUserName = await UserManager.FindByNameAsync(user.UserName);
+            if(checkUserName.UserName != model.UserName)
+            {
+                ModelState.AddModelError("CustomError", "User name của email "+model.Email+" không tồn tại, mời nhập lại user name");
+                return View(model);
+               // return RedirectToAction("ResetPasswordConfirmation", "Account");
+            }
+
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
             if (result.Succeeded)
             {
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                ModelState.AddModelError("CustomSuccess", "Đặt lại mật khẩu thành công");
+                return View(model);
             }
-            AddErrors(result);
-            return View();
+            ModelState.AddModelError("CustomError", result.Errors.FirstOrDefault());
+            return View(model);
+       
         }
 
         //

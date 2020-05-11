@@ -7,7 +7,9 @@
     transform: scale(0);
     width: 100vw;
 }
-
+.modal{
+    right:calc((100vw - 500px) / 2) !important;
+}
     .FlashMessage .Modal {
         align-items: center;
         background-color: #F2EDE4;
