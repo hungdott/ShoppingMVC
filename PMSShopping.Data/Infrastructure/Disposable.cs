@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShoppingApp.Data.Infrastructure
+namespace PMSShopping.Data.Infrastructure
 {
     public class Disposable : IDisposable
     {

@@ -6,7 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using PMSShoppingApp.Models;
-
+[assembly: OwinStartup(typeof(PMSShoppingApp.Startup))]
 namespace PMSShoppingApp
 {
     public partial class Startup

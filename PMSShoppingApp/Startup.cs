@@ -1,7 +1,7 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(PMSShoppingApp.Startup))]
+[assembly: OwinStartup(typeof(PMSShoppingApp.Startup))]
 namespace PMSShoppingApp
 {
     public partial class Startup
@@ -9,6 +9,7 @@ namespace PMSShoppingApp
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            ConfigAutofac(app);
         }
     }
 }

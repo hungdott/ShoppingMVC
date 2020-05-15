@@ -107,7 +107,7 @@ namespace PMSShoppingApp
             if (dataProtectionProvider != null)
             {
                 manager.UserTokenProvider = 
-                    new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
+                    new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("Ludocielf for funny happy day friend"));
             }
             return manager;
         }
