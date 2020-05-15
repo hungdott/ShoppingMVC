@@ -183,7 +183,8 @@ namespace PMSShoppingApp.Controllers
                     ModelState.AddModelError("CustomSuccess", "Chúng tôi đã gửi mail đến tài khoản của bạn, vui lòng làm theo hướng dẫn");
                     return View(model);
                 }
-                AddErrors(result);
+                ModelState.AddModelError("CustomError", result.Errors.FirstOrDefault());
+                return View(model);
             }
 
             // If we got this far, something failed, redisplay form

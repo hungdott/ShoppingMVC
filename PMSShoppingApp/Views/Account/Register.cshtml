@@ -74,6 +74,10 @@
     {
         @Html.Partial("~/Views/Shared/SuccessFriendly.cshtml", ViewData.ModelState["CustomSuccess"].Errors.First().ErrorMessage.ToString())
     }
+    @if (ViewData.ModelState["CustomError"] != null && ViewData.ModelState["CustomError"].Errors.Any())
+    {
+        @Html.Partial("~/Views/Shared/ErrorFrendly.cshtml", ViewData.ModelState["CustomError"].Errors.First().ErrorMessage.ToString())
+    }
     <!-- JS -->
 
 </body>

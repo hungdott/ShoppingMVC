@@ -19,17 +19,7 @@ namespace PMSShoppingApp.Controllers
         }
         public ActionResult Index()
         {
-            _slideService.Add(new Slide()
-            {
-                DisplayOrder = 1,
-                Description = "asdfsdfsd",
-                Image = "dsfgsdfsd",
-                Name = "124123",
-                Status = true,
-                Url = "asdasd"
-
-            });
-            _slideService.SaveChanges();
+           
             return View();
         }
 
